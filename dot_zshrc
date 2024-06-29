@@ -1,0 +1,44 @@
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle :compinstall filename '/home/arx/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd beep extendedglob
+bindkey -e
+
+# Make micro default editor
+export EDITOR=micro
+export VISUAL=micro
+
+# Aliases
+alias upd='paru -Syyu --noconfirm && flatpak update'
+alias updshut='paru -Syyu --noconfirm && flatpak update && shutdown'
+alias refup='sudo reflector --verbose --country CZ,DE --protocol https --sort rate --latest 20 --download-timeout 300 --save /etc/pacman.d/mirrorlist'
+alias goodbye='shutdown'
+alias ff='fastfetch'
+alias plz='sudo'
+alias lemmeout='hyprctl dispatch exit'
+# Micro Aliases
+alias zshrc='micro /home/arx/.zshrc'
+alias hyprconf='micro ~/.config/hypr/hyprland.conf'
+alias wbarstyle='micro ~/.config/waybar/style.css'
+alias wbarconf= 'micro ~/.config/waybar/config.jsonc'
+alias cavaconf='micro ~/.config/cava/config'
+# App Launch Aliases
+alias floorp='flatpak run one.ablaze.floorp'
+alias discord='flatpak run dev.vencord.Vesktop'
+alias obsidian='flatpak run md.obsidian.Obsidian'
+alias penpot='flatpak run com.sudovanilla.penpot-desktop'
+# End of lines configured by zsh-newuser-install
+eval "$(starship init zsh)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# PS; If you're reading this you're a cutie patootie
